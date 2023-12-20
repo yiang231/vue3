@@ -15,23 +15,25 @@ export default {
 }
 </script>
 <script lang="ts" setup>
+import { ref } from 'vue'
 // 数据
-let name = '张三'
-let age = 12
+// 基本类型响应式数据
+let name = ref('张三')
+let age = ref(12)
 let tel = '123465789'
 let address = '监狱'
 
 // 方法
 function changeName() {
-  if (name === 'zhangSan') {
-    name = '张三'
+  if (name.value === 'zhangSan') {
+    name.value = '张三'
   } else {
-    name = 'zhangSan'
+    name.value = 'zhangSan'
   }
 }
 
 function changeAge() {
-  age += 1
+  age.value += 1
 }
 
 function showTel() {
