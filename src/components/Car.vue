@@ -8,9 +8,6 @@
       <li v-for="game in games" v-bind:key="game.id">{{ game.name }}</li>
     </ul>
     <button @click="changeGameName()">修改游戏名称</button>
-    <hr />
-    <h2>测试：{{ obj.a.b.c }}</h2>
-    <button @click="changeObj()">修改测试对象</button>
   </div>
 </template>
 
@@ -20,31 +17,20 @@ export default {
 }
 </script>
 <script lang="ts" setup>
-import { reactive } from 'vue'
-
-let car = reactive({ brand: '奔驰', price: 100 })
-let games = reactive([
+import { ref } from 'vue'
+let car = ref({ brand: '奔驰', price: 100 })
+let games = ref([
   { id: 'game1', name: '农' },
   { id: 'game2', name: '舟' },
   { id: 'game3', name: '原' }
 ])
-let obj = reactive({
-  a: {
-    b: {
-      c: 54
-    }
-  }
-})
 function changePrice() {
-  car.price += 10
+  car.value.price += 10
 }
 function changeGameName() {
-  games[0].name = '王者荣耀'
-  games[1].name = '明日方舟'
-  games[2].name = '原神启动'
-}
-function changeObj() {
-  obj.a.b.c = 666
+  games.value[0].name = '王者荣耀'
+  games.value[1].name = '明日方舟'
+  games.value[2].name = '原神启动'
 }
 </script>
 <style scoped>
