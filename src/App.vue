@@ -1,8 +1,5 @@
 <template>
-  <div class="app">
-    <h1>你好啊！</h1>
-    <components_Person />
-  </div>
+  <components_Person />
 </template>
 
 <script>
@@ -14,11 +11,4 @@ export default {
 }
 </script>
 
-<style>
-.app {
-  background-color: azure;
-  box-shadow: 0 0 10px;
-  border-radius: 10px;
-  padding: 20px;
-}
-</style>
+<style></style>

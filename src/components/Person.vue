@@ -11,27 +11,30 @@
 <script>
 export default {
   name: 'components_Person',
-  data() {
-    return {
-      name: '张三',
-      age: 18,
-      tel: '123456789'
-    }
-  },
-  methods: {
-    showTel() {
-      alert(this.tel)
-    },
-    changeName() {
-      if (this.name === 'zhangSan') {
-        this.name = '张三'
+  setup() {
+    // 数据，弱化了 this
+    let name = '张三'
+    let age = 12
+    // 此时并非响应式数据
+    let tel = '123465789'
+
+    // 方法
+    function changeName() {
+      if (name === 'zhangSan') {
+        name = '张三'
       } else {
-        this.name = 'zhangSan'
+        name = 'zhangSan'
       }
-    },
-    changeAge() {
-      this.age += 1
     }
+    function changeAge() {
+      age += 1
+    }
+    function showTel() {
+      alert(tel)
+    }
+    return { name, age, tel, changeName, changeAge, showTel }
+    // setup() 也可以返回渲染函数
+    // return () => '哈哈'
   }
 }
 </script>
