@@ -8,6 +8,8 @@
     <components_Computed />
     <hr />
     <components_Watch />
+    <hr />
+    <components_WatchEffect />
 </template>
 
 <script>
@@ -16,6 +18,7 @@ import components_Car from '@/components/Car.vue'
 import components_Book from '@/components/Book.vue'
 import components_Computed from '@/components/Computed.vue'
 import components_Watch from '@/components/Watch.vue'
+import components_WatchEffect from '@/components/WatchEffect.vue'
 
 export default {
     // 组件名
@@ -25,7 +28,8 @@ export default {
         components_Car,
         components_Book,
         components_Computed,
-        components_Watch
+        components_Watch,
+        components_WatchEffect
     }
 }
 </script>
