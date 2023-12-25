@@ -14,12 +14,20 @@
     <components_RefAttr ref="refAttr" />
     <br />
     <button @click="showLog">展示refAttr</button>
+    <hr />
+    <components_Ts a="哈哈" b="呵呵" v-bind:list="personList" />
+    <br />
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
+import { type Persons } from '@/types'
 
 let refAttr = ref()
-
+let personList = reactive<Persons>([
+    { id: 'a', name: 'a', age: 1 },
+    { id: 'b', name: 'b', age: 2 },
+    { id: 'c', name: 'c', age: 3 }
+])
 function showLog() {
     // 获取的是组件实例对象
     console.log(refAttr.value)
@@ -33,6 +41,7 @@ import components_Computed from '@/components/Computed.vue'
 import components_Watch from '@/components/Watch.vue'
 import components_WatchEffect from '@/components/WatchEffect.vue'
 import components_RefAttr from '@/components/RefAttr.vue'
+import components_Ts from '@/components/Ts.vue'
 
 export default {
     // 组件名
@@ -44,7 +53,8 @@ export default {
         components_Computed,
         components_Watch,
         components_WatchEffect,
-        components_RefAttr
+        components_RefAttr,
+        components_Ts
     }
 }
 </script>
