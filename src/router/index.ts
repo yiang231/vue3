@@ -19,7 +19,8 @@ const router = createRouter({
             children: [
                 {
                     name: 'p_news_detail',
-                    path: 'detail',
+                    // 提前占位，content? 不一定要传
+                    path: 'detail/:id/:title/:content?',
                     component: components_Detail
                 }
             ]
