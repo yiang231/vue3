@@ -1,15 +1,12 @@
 <template>
     <ul class="news-list">
-        <li>编号：{{ params.id }}</li>
-        <li>标题：{{ params.title }}</li>
-        <li>内容：{{ params.content }}</li>
+        <li>编号：{{ id }}</li>
+        <li>标题：{{ title }}</li>
+        <li>内容：{{ content }}</li>
     </ul>
 </template>
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { toRefs } from 'vue'
-// 响应式对象进行解构，需要使用 toRefs() 包裹
-let { params } = toRefs(useRoute())
+defineProps(['id', 'title', 'content'])
 </script>
 <script lang="ts">
 export default {

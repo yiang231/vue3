@@ -6,7 +6,7 @@
                     :to="{
                         // 只能使用 name
                         name: 'p_news_detail',
-                        params: {
+                        query: {
                             // 不能传 对象和数组
                             id: id,
                             title: title,

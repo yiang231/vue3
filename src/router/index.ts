@@ -20,8 +20,23 @@ const router = createRouter({
                 {
                     name: 'p_news_detail',
                     // 提前占位，content? 不一定要传
-                    path: 'detail/:id/:title/:content?',
-                    component: components_Detail
+                    // path: 'detail/:id/:title/:content?',
+                    path: 'detail',
+                    component: components_Detail,
+                    // 1、将路由收到的所有的 params 参数作为 props 传给路由组件
+                    // props: true
+
+                    // 2、写成函数，自己决定传什么作为 props 传给路由组件，配合 query 使用
+                    props(route) {
+                        return route.query
+                    }
+
+                    // 3、写成对象，无法被引入的组件来传值
+                    // props: {
+                    //     id: 'id',
+                    //     title: 'title',
+                    //     content: 'content'
+                    // }
                 }
             ]
         },
