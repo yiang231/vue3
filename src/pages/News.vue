@@ -1,8 +1,23 @@
 <template>
     <div class="news">
         <ul>
-            <li v-for="news in newsList" :key="news.id">
-                <RouterLink to="/news/detail"> {{ news.title }}</RouterLink>
+            <li v-for="{ id, title, content } in newsList" :key="id">
+                <RouterLink
+                    :to="{
+                        name: 'p_news_detail',
+                        path: '/news/detail',
+                        query: {
+                            id: id,
+                            title: title,
+                            content: content
+                        }
+                    }"
+                    >{{ title }}
+                </RouterLink>
+                <!--                <RouterLink :to="`/news/detail?id=${id}&title=${title}&content=${content}`">{{
+                                    title
+                                }}</RouterLink>-->
+                <!--                <RouterLink to="/news/detail?a=哈哈&b=嘿嘿&c=呵呵"> {{ news.title }}</RouterLink>-->
             </li>
         </ul>
         <div class="content">
