@@ -1,72 +1,68 @@
 <template>
-    <components_Person />
-    <hr />
-    <components_Car />
-    <hr />
-    <components_Book />
-    <hr />
-    <components_Computed />
-    <hr />
-    <components_Watch />
-    <hr />
-    <components_WatchEffect />
-    <hr />
-    <components_RefAttr ref="refAttr" />
-    <br />
-    <button @click="showLog">展示refAttr</button>
-    <hr />
-    <components_Ts a="哈哈" b="呵呵" v-bind:list="personList" />
-    <hr />
-    <components_LifeCycle v-if="isShow" />
+    <div class="app">
+        <components_Header />
+        <div class="navigate">
+            <!--字符串写法-->
+            <RouterLink to="/home" active-class="active">首页</RouterLink>
+            <!--对象写法_1-->
+            <RouterLink :to="{ name: 'p_news' }" active-class="active">新闻</RouterLink>
+            <!--对象写法_2-->
+            <RouterLink :to="{ path: '/about' }" active-class="active">关于</RouterLink>
+        </div>
+        <div class="content">
+            <RouterView />
+        </div>
+    </div>
 </template>
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
-import { type Persons } from '@/types'
-
-let refAttr = ref()
-let personList = reactive<Persons>([
-    { id: 'a', name: 'a', age: 1 },
-    { id: 'b', name: 'b', age: 2 },
-    { id: 'c', name: 'c', age: 3 }
-])
-
-function showLog() {
-    // 获取的是组件实例对象
-    console.log(refAttr.value)
-}
-
-let isShow = ref(true)
+import { RouterView } from 'vue-router'
 </script>
 <script lang="ts">
-import components_Person from '@/components/Person.vue'
-import components_Car from '@/components/Car.vue'
-import components_Book from '@/components/Book.vue'
-import components_Computed from '@/components/Computed.vue'
-import components_Watch from '@/components/Watch.vue'
-import components_WatchEffect from '@/components/WatchEffect.vue'
-import components_RefAttr from '@/components/RefAttr.vue'
-import components_Ts from '@/components/Ts.vue'
-import components_LifeCycle from '@/components/LifeCycle.vue'
+import components_Header from '@/components/Header.vue'
 
 export default {
     // 组件名
     name: 'App',
     components: {
-        components_Person,
-        components_Car,
-        components_Book,
-        components_Computed,
-        components_Watch,
-        components_WatchEffect,
-        components_RefAttr,
-        components_Ts,
-        components_LifeCycle
+        components_Header
     }
 }
 </script>
 
 <style scoped>
-button {
-    margin: 0 5px;
+.navigate {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 100px;
+}
+
+.navigate a {
+    display: block;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.navigate a.active {
+    background-color: #64967e;
+    color: #ffc268;
+    font-weight: 900;
+    text-shadow: 0 0 1px black;
+    font-family: 'Microsoft YaHei UI', serif;
+}
+
+.content {
+    margin: 30px auto 0;
+    border-radius: 10px;
+    width: 90%;
+    height: 400px;
+    border: 1px solid;
 }
 </style>
