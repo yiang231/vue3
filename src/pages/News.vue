@@ -1,14 +1,25 @@
 <template>
     <div class="news">
         <ul>
-            <li><a href="#">新闻001</a></li>
-            <li><a href="#">新闻002</a></li>
-            <li><a href="#">新闻003</a></li>
-            <li><a href="#">新闻004</a></li>
+            <li v-for="news in newsList" :key="news.id">
+                <RouterLink to="/news/detail"> {{ news.title }}</RouterLink>
+            </li>
         </ul>
+        <div class="content">
+            <RouterView />
+        </div>
     </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { reactive } from 'vue'
+
+const newsList = reactive([
+    { id: 'a', title: '游戏1', content: '原神' },
+    { id: 'b', title: '游戏2', content: '王者荣耀' },
+    { id: 'c', title: '游戏3', content: '元神' },
+    { id: 'd', title: '游戏4', content: '阴阳师' }
+])
+</script>
 <script lang="ts">
 export default {
     name: 'components_News'
@@ -25,8 +36,12 @@ export default {
 
 .news ul {
     margin-top: 30px;
-    list-style: none;
+    /*list-style: none;*/
     padding-left: 10px;
+}
+
+.news li::marker {
+    color: chartreuse;
 }
 
 .news li > a {
@@ -37,7 +52,7 @@ export default {
     text-shadow: 0 0 1px rgb(0, 84, 0);
 }
 
-.news-content {
+.content {
     width: 70%;
     height: 90%;
     border: 1px solid;
