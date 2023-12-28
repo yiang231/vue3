@@ -3,7 +3,8 @@
         <components_Header />
         <div class="navigate">
             <!--字符串写法-->
-            <RouterLink to="/home" active-class="active">首页</RouterLink>
+            <!--无法回到来时的页面-->
+            <RouterLink replace to="/home" active-class="active">首页</RouterLink>
             <!--对象写法_1-->
             <RouterLink :to="{ name: 'p_news' }" active-class="active">新闻</RouterLink>
             <!--对象写法_2-->

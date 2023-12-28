@@ -8,6 +8,11 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes: [
         {
+            // 重定向，解决首页默认页面问题
+            path: '/',
+            redirect: '/home'
+        },
+        {
             name: 'p_home',
             path: '/home',
             component: components_Home

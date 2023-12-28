@@ -2,6 +2,7 @@
     <div class="news">
         <ul>
             <li v-for="{ id, title, content } in newsList" :key="id">
+                <button @click="showNewsDetail(id, title, content)">点击查看游戏</button>
                 <RouterLink
                     :to="{
                         // 只能使用 name
@@ -26,6 +27,7 @@
 </template>
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
 
 const newsList = reactive([
     { id: 'a', title: '游戏1', content: '原神' },
@@ -33,6 +35,19 @@ const newsList = reactive([
     { id: 'c', title: '游戏3', content: '元神' },
     { id: 'd', title: '游戏4', content: '阴阳师' }
 ])
+const router = useRouter()
+function showNewsDetail(id, title, content) {
+    // 编程式路由导航
+    // router.replace({
+    router.push({
+        name: 'p_news_detail',
+        query: {
+            id: id,
+            title: title,
+            content: content
+        }
+    })
+}
 </script>
 <script lang="ts">
 export default {
