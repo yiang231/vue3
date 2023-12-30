@@ -1,6 +1,7 @@
 <template>
     <div class="count">
-        <h2>当前求和为：{{ sum }}</h2>
+        <h2>当前求和为：{{ countStore.sum }}</h2>
+        <h3>欢迎来到位于{{ countStore.address }}の{{ countStore.school }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -18,17 +19,30 @@ export default {
 </script>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useCountStore } from '@/store/count'
 
-let sum = ref(1)
+// let sum = ref(1)
 // 选择的数字
 let n = ref(1)
+const countStore = useCountStore()
 
 function add() {
-    sum.value += n.value
+    // pinia 中修改数据的第一种方式，拿到后直接修改
+    // countStore.sum += n.value
+
+    // pinia 中修改数据的第二种方式，批量修改
+    // countStore.$patch({
+    //     sum: 666,
+    //     school: '尚硅谷',
+    //     address: '北京'
+    // })
+
+    // pinia 中修改数据的第三种方式，使用 actions
+    countStore.increment(n.value)
 }
 
 function sub() {
-    sum.value -= n.value
+    countStore.$state.sum -= n.value
 }
 </script>
 
