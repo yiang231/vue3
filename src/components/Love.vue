@@ -25,6 +25,13 @@ import { storeToRefs } from 'pinia'
 // ])
 const loveStore = useLoveStore()
 const { talkList } = storeToRefs(loveStore)
+// 订阅【监视】数据
+loveStore.$subscribe((mutation, state) => {
+    // state 是真实的数据
+    console.log(mutation, state)
+    // 存在 localStorage 中
+    localStorage.setItem('talkList', JSON.stringify(state.talkList))
+})
 function getLove() {
     loveStore.getTalk()
 }
