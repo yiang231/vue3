@@ -1,7 +1,7 @@
 <template>
     <div class="count">
-        <h2>当前求和为：{{ sum }}</h2>
-        <h3>欢迎来到位于{{ address }}の{{ school }}</h3>
+        <h2>当前求和为：{{ sum }}，放大后为：{{ bigSum }}</h2>
+        <h3>欢迎来到位于{{ address }}の{{ school }}，大写为{{ upperSchool }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -27,7 +27,7 @@ import { storeToRefs } from 'pinia'
 let n = ref(1)
 const countStore = useCountStore()
 // pinia 中的响应式对象解构
-const { sum, school, address } = storeToRefs(countStore)
+const { sum, school, address, bigSum, upperSchool } = storeToRefs(countStore)
 function add() {
     // pinia 中修改数据的第一种方式，拿到后直接修改
     // countStore.sum += n.value

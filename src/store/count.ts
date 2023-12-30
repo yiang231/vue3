@@ -16,5 +16,13 @@ export const useCountStore = defineStore('count', {
             school: 'atguigu',
             address: 'earth'
         }
+    },
+    // 额外加工数据
+    getters: {
+        bigSum: (state) => state.sum * 20,
+        // 指定返回类型
+        upperSchool(): string {
+            return this.school.toUpperCase()
+        }
     }
 })
