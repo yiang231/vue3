@@ -7,6 +7,7 @@
                 <!-- 导航区 -->
                 <router-link active-class="active" class="list-group-item" to="/props">1. props</router-link>
                 <router-link active-class="active" class="list-group-item" to="/event">2. customs-event</router-link>
+                <router-link active-class="active" class="list-group-item" to="/mitt">3. mitt</router-link>
             </div>
             <div class="col-xs-9 col-md-9 col-lg-9 col-xl-9">
                 <div class="panel-body">
