@@ -18,10 +18,22 @@
     <components_Ts a="哈哈" b="呵呵" v-bind:list="personList" />
     <hr />
     <components_LifeCycle v-if="isShow" />
+    <hr />
+    <components_Shallow />
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { type Persons } from '@/types'
+import components_Person from '@/components/Person.vue'
+import components_Car from '@/components/Car.vue'
+import components_Book from '@/components/Book.vue'
+import components_Computed from '@/components/Computed.vue'
+import components_Watch from '@/components/Watch.vue'
+import components_WatchEffect from '@/components/WatchEffect.vue'
+import components_RefAttr from '@/components/RefAttr.vue'
+import components_Ts from '@/components/Ts.vue'
+import components_LifeCycle from '@/components/LifeCycle.vue'
+import components_Shallow from '@/components/Shallow.vue'
 
 let refAttr = ref()
 let personList = reactive<Persons>([
@@ -36,33 +48,6 @@ function showLog() {
 }
 
 let isShow = ref(true)
-</script>
-<script lang="ts">
-import components_Person from '@/components/Person.vue'
-import components_Car from '@/components/Car.vue'
-import components_Book from '@/components/Book.vue'
-import components_Computed from '@/components/Computed.vue'
-import components_Watch from '@/components/Watch.vue'
-import components_WatchEffect from '@/components/WatchEffect.vue'
-import components_RefAttr from '@/components/RefAttr.vue'
-import components_Ts from '@/components/Ts.vue'
-import components_LifeCycle from '@/components/LifeCycle.vue'
-
-export default {
-    // 组件名
-    name: 'App',
-    components: {
-        components_Person,
-        components_Car,
-        components_Book,
-        components_Computed,
-        components_Watch,
-        components_WatchEffect,
-        components_RefAttr,
-        components_Ts,
-        components_LifeCycle
-    }
-}
 </script>
 
 <style scoped>
