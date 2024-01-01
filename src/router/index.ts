@@ -3,6 +3,7 @@ import Props from '@/pages/01_props/PropsFather.vue'
 import CustomsEvent from '@/pages/02_custom-event/CustomsEventFather.vue'
 import Mitt from '@/pages/03_mitt/Mitt_Father.vue'
 import VModel from '@/pages/04_v-model/VModelFather.vue'
+import Attrs from '@/pages/05_$attrs/AttrsFather.vue'
 
 export default createRouter({
     history: createWebHistory(),
@@ -27,6 +28,10 @@ export default createRouter({
         {
             path: '/model',
             component: VModel
+        },
+        {
+            path: '/attrs',
+            component: Attrs
         }
     ]
 })
