@@ -4,6 +4,7 @@ import CustomsEvent from '@/pages/02_custom-event/CustomsEventFather.vue'
 import Mitt from '@/pages/03_mitt/Mitt_Father.vue'
 import VModel from '@/pages/04_v-model/VModelFather.vue'
 import Attrs from '@/pages/05_$attrs/AttrsFather.vue'
+import RefsChildrenParent from '@/pages/06_$refs-$parent/ParentFather.vue'
 
 export default createRouter({
     history: createWebHistory(),
@@ -32,6 +33,10 @@ export default createRouter({
         {
             path: '/attrs',
             component: Attrs
+        },
+        {
+            path: '/refs-parent',
+            component: RefsChildrenParent
         }
     ]
 })
