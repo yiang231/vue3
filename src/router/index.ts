@@ -6,6 +6,7 @@ import VModel from '@/pages/04_v-model/VModelFather.vue'
 import Attrs from '@/pages/05_$attrs/AttrsFather.vue'
 import RefsChildrenParent from '@/pages/06_$refs-$parent/ParentFather.vue'
 import ProvideInject from '@/pages/07_provide-inject/ProvideFather.vue'
+import Slot from '@/pages/08_slot/SlotFather.vue'
 
 export default createRouter({
     history: createWebHistory(),
@@ -42,6 +43,10 @@ export default createRouter({
         {
             path: '/provide-inject',
             component: ProvideInject
+        },
+        {
+            path: '/slot',
+            component: Slot
         }
     ]
 })

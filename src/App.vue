@@ -13,6 +13,7 @@
                 <router-link active-class="active" class="list-group-item" to="/attrs">5. $attrs</router-link>
                 <router-link active-class="active" class="list-group-item" to="/refs-parent">6. <span class="small">$refs、$parent</span></router-link>
                 <router-link active-class="active" class="list-group-item" to="/provide-inject">7. provide、inject</router-link>
+                <router-link active-class="active" class="list-group-item" to="/slot">8. slot</router-link>
             </div>
             <div class="col-xs-9 col-md-9 col-lg-9 col-xl-9">
                 <div class="panel-body">
