@@ -22,6 +22,8 @@
     <components_Shallow />
     <hr />
     <ReadOnly />
+    <hr />
+    <components_Raw />
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
@@ -37,6 +39,7 @@ import components_Ts from '@/components/Ts.vue'
 import components_LifeCycle from '@/components/LifeCycle.vue'
 import components_Shallow from '@/components/Shallow.vue'
 import ReadOnly from '@/components/ReadOnly.vue'
+import components_Raw from '@/components/Raw.vue'
 
 let refAttr = ref()
 let personList = reactive<Persons>([
