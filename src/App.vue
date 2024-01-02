@@ -20,6 +20,8 @@
     <components_LifeCycle v-if="isShow" />
     <hr />
     <components_Shallow />
+    <hr />
+    <ReadOnly />
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
@@ -34,6 +36,7 @@ import components_RefAttr from '@/components/RefAttr.vue'
 import components_Ts from '@/components/Ts.vue'
 import components_LifeCycle from '@/components/LifeCycle.vue'
 import components_Shallow from '@/components/Shallow.vue'
+import ReadOnly from '@/components/ReadOnly.vue'
 
 let refAttr = ref()
 let personList = reactive<Persons>([
