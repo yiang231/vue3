@@ -28,6 +28,8 @@
     <CustomRef />
     <hr />
     <ModalOuter />
+    <hr />
+    <SuspenseOuter />
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
@@ -46,6 +48,7 @@ import ReadOnly from '@/components/ReadOnly.vue'
 import components_Raw from '@/components/Raw.vue'
 import CustomRef from '@/components/CustomRef.vue'
 import ModalOuter from '@/components/ModalOuter.vue'
+import SuspenseOuter from '@/components/SuspenseOuter.vue'
 
 let refAttr = ref()
 let personList = reactive<Persons>([

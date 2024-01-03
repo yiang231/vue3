@@ -6,7 +6,7 @@ import { customRef } from 'vue'
  * @param delay 延迟时间
  */
 export default function (init: string, delay: number) {
-    let timer: number | NodeJS.Timeout = null
+    let timer: number
     const msg = customRef((track, trigger) => {
         return {
             get() {
