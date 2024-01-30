@@ -1,24 +1,45 @@
 <template>
-  <div class="app">
-    <h1>你好啊！</h1>
-    <components_Person />
-  </div>
+    <div class="navigate">
+        <RouterLink to="/ajax" active-class="active">Ajax</RouterLink>
+        <RouterLink to="/axios" active-class="active">Axios</RouterLink>
+        <RouterLink to="/fetch" active-class="active">Fetch</RouterLink>
+    </div>
+    <div class="content">
+        <RouterView />
+    </div>
 </template>
 
-<script>
-import components_Person from '@/components/Person.vue'
-export default {
-  // 组件名
-  name: 'App',
-  components: { components_Person }
-}
-</script>
+<script lang="ts" setup></script>
 
-<style>
-.app {
-  background-color: azure;
-  box-shadow: 0 0 10px;
-  border-radius: 10px;
-  padding: 20px;
+<style scoped>
+.navigate {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 100px;
+}
+
+.navigate a {
+    display: block;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.navigate a.active {
+    background-color: #64967e;
+    color: #ffc268;
+}
+
+.content {
+    margin: 30px auto 0;
+    width: 90%;
+    height: 400px;
 }
 </style>
